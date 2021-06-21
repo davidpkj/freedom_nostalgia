@@ -1,8 +1,8 @@
 #include "vector.hpp"
 
-namespace util
+namespace Util
 {
-    RAYLIB_H::Vector2 scale(RAYLIB_H::Vector2 vector, float factor)
+    Vector2 scale(Vector2 vector, float factor)
     {
         return {vector.x * factor, vector.y * factor};
     }

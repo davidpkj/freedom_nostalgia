@@ -1,13 +1,12 @@
 #include "character.hpp"
 
-void Character::updateMovement(float deltaTime)
+Character::Character(Vector2 direction, Vector2 position, Vector2 size, float speed, const char* texture) 
 {
-    if (IsKeyDown(KEY_RIGHT))
-        position.x += speed * deltaTime;
-    if (IsKeyDown(KEY_LEFT))
-        position.x -= speed * deltaTime;
-    if (IsKeyDown(KEY_UP))
-        position.y -= speed * deltaTime;
-    if (IsKeyDown(KEY_DOWN))
-        position.y += speed * deltaTime;
-};
+    this->direction = direction;
+    this->position = position;
+    this->size = size;
+    this->speed = speed;
+    this->texture = texture;
+
+    std::cout << "Character initialized" << std::endl;
+}

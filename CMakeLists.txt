@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.11) # FetchContent is available in 3.11+
-project(raylib-cpp-test)
+project(freedom-nostalgia)
 
 # raylib
 find_package(raylib QUIET)
@@ -40,12 +40,11 @@ if (NOT raylib-cpp_FOUND)
 endif()
 
 # This is the main part:
-set(PROJECT_NAME "RaylibGame")
-set(PROJECT_UTIL "src/util/vector.cpp" "src/classes/character.cpp")
+set(PROJECT_NAME "Freedom-Nostalgia")
+set(PROJECT_UTIL "src/util/vector.cpp" "src/classes/character.cpp" "src/classes/player.cpp" "src/handlers/control.cpp")
 set(PROJECT_SOURCES "src/main.cpp")
-add_executable(${PROJECT_NAME} ${PROJECT_UTIL} ${PROJECT_SOURCES})
 set(raylib_VERBOSE 1)
+add_executable(${PROJECT_NAME} ${PROJECT_UTIL} ${PROJECT_SOURCES})
 target_link_libraries(${PROJECT_NAME} PUBLIC raylib raylib-cpp)
-include_directories("src/util")
 
 # That's it! You should have an example executable that you can run. Have fun!

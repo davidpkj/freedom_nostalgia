@@ -1,6 +1,7 @@
 #ifndef class_character_hpp
 #define class_character_hpp
 
+#include <iostream>
 #include <cmath>
 
 #include <raylib.h>
@@ -8,13 +9,13 @@
 class Character
 {
 public:
-    Vector2 initialDirection;
     Vector2 direction;
     Vector2 position;
     Vector2 size;
     float speed;
+    const char* texture;
 
-    void updateMovement(float deltaTime);
+    Character(Vector2 direction, Vector2 position, Vector2 size, float speed, const char* texture);
 };
 
 #endif

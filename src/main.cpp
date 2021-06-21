@@ -6,15 +6,18 @@
 #include <raylib.h>
 
 #include "util/vector.hpp"
-#include "classes/character.hpp"
+#include "classes/player.hpp"
+#include "handlers/control.hpp"
 
 const int screenWidth = 800;
 const int screenHeight = 450;
 const unsigned int microsecond = 1000000;
 
-Character character;
+Player player = {{0, 0}, {(float)screenWidth / 2, (float)screenHeight / 2}, {30.0f, 70.0f}, 100.0f, "../resources/player.png"};
+Texture2D playerTexture;
 Texture2D texture;
 
+void Deinitialize(void);
 void Initialize(void);
 void Update(void);
 void Draw(void);
@@ -29,25 +32,35 @@ int main(void)
         Draw();
     }
 
-    UnloadTexture(texture);
-    CloseWindow();
+    Deinitialize();
 
     return 0;
 }
 
-void Initialize() {
-    InitWindow(screenWidth, screenHeight, "Dong");
+void Deinitialize()
+{
+    UnloadTexture(playerTexture);
+    UnloadTexture(texture);
+    CloseWindow();
+}
+
+void Initialize()
+{
+    SetConfigFlags(FLAG_MSAA_4X_HINT);
+
+    InitWindow(screenWidth, screenHeight, "Freedom Nostalgia");
     SetTargetFPS(144);
 
-    character = {{0, 0}, {0, 0}, {(float)screenWidth / 2, (float)screenHeight / 2}, {30.0f, 70.0f}, 100.0f};
-    texture = LoadTexture("../resources/tile.png");
+    playerTexture = LoadTexture("../resources/player.png");
+    texture = LoadTexture("../resources/tile_grass.png");  // TODO: Manage textures in seperate manager
 }
 
 void Update()
 {
     float deltaTime = GetFrameTime();
 
-    character.updateMovement(deltaTime);
+    control::update();
+    player.updateMovement(deltaTime);
 }
 
 void Draw()
@@ -56,8 +69,8 @@ void Draw()
 
     ClearBackground(SKYBLUE);
     DrawTexture(texture, 0, 0, GREEN);
-    DrawTexture(texture, 128, 0, GREEN);
-    DrawRectangleV(character.position, character.size, RAYWHITE);
+    DrawTexture(texture, 128, 0, GREEN);  // TODO: Group into map handler
+    player.draw(playerTexture);
 
     EndDrawing();
 }

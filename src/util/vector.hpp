@@ -5,9 +5,9 @@
 
 #include <raylib.h>
 
-namespace util
+namespace Util
 {
-    RAYLIB_H::Vector2 scale(RAYLIB_H::Vector2 vector, float factor);
+    Vector2 scale(Vector2 vector, float factor);
 
     bool isZero(Vector2 vector);
 }
