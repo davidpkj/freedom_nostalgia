@@ -1,6 +1,6 @@
 #include "control.hpp"
 
-namespace control
+namespace Control
 {
     void update()
     {

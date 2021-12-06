@@ -6,6 +6,7 @@
 #include <raylib.h>
 
 #include "character.hpp"
+#include "../handlers/control.hpp"
 
 class Player : public Character
 {

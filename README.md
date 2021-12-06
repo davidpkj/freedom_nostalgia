@@ -21,7 +21,7 @@ I document the past, planned and working changes here.
 
 ## Last changes
 
-These are only the changes from the latest commit. For more information regarding the progess of this project see the [commits](https://https://github.com/davidpkj/freedom-nostalgia/commits/main) on this repository.
+These are only the changes from the latest commit. For more information regarding the progess of this project see the [commits](https://https://github.com/davidpkj/freedom_nostalgia/commits/main) on this repository.
 
 - Add: gamepad support (technically, not yet usable)
 - Add: dedicated control system
@@ -33,12 +33,12 @@ This game is not yet up for download. If you are on a Linux based system however
 
 Clone this repository:
 ```bash
-git clone https://github.com/davidpkj/freedom-nostalgia
+git clone https://github.com/davidpkj/freedom_nostalgia
 ```
 
 Create and enter a build directory:
 ```bash
-cd freedom-nostalgia
+cd freedom_nostalgia
 mkdir build
 cd build
 ```

@@ -1,6 +1,6 @@
 #include "character.hpp"
 
-Character::Character(Vector2 direction, Vector2 position, Vector2 size, float speed, const char* texture) 
+Character::Character(Vector2 direction, Vector2 position, Vector2 size, float speed, const char *texture)
 {
     this->direction = direction;
     this->position = position;

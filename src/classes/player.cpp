@@ -1,4 +1,3 @@
-#include "../handlers/control.hpp"
 #include "player.hpp"
 
 Player::Player(Vector2 direction, Vector2 position, Vector2 size, float speed, const char *texture) : Character(direction, position, size, speed, texture)
@@ -11,21 +10,21 @@ Player::Player(Vector2 direction, Vector2 position, Vector2 size, float speed, c
 
 void Player::updateMovement(float deltaTime)
 {
-    if (control::up > 0.0f)
+    if (Control::up > 0.0f)
     {
-        this->position.y -= this->speed * deltaTime * control::up;
+        this->position.y -= this->speed * deltaTime * Control::up;
     }
-    if (control::down > 0.0f)
+    if (Control::down > 0.0f)
     {
-        this->position.y += this->speed * deltaTime * control::down;
+        this->position.y += this->speed * deltaTime * Control::down;
     }
-    if (control::left > 0.0f)
+    if (Control::left > 0.0f)
     {
-        this->position.x -= this->speed * deltaTime * control::left;
+        this->position.x -= this->speed * deltaTime * Control::left;
     }
-    if (control::right > 0.0f)
+    if (Control::right > 0.0f)
     {
-        this->position.x += this->speed * deltaTime * control::right;
+        this->position.x += this->speed * deltaTime * Control::right;
     }
 
     this->playerDestinationRectangle.x = this->position.x;

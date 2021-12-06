@@ -6,7 +6,8 @@
 
 #include <raylib.h>
 
-namespace control {
+namespace Control
+{
     inline float up;
     inline float down;
     inline float left;
